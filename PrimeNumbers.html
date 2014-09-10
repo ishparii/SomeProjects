@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	#numbers {
+		width: 580px;
+		margin-left: auto;
+    	margin-right: auto;
+
+	}
+
+	.prime {
+		height: 50px;
+		width: 50px;
+		border: solid 4px;
+		border-radius: 12%;
+		border-color: red;
+		border-width: 4px;
+		display: inline-block;
+		background-color: #FF9999;
+		margin-top: 10px;
+      	margin-bottom: 10px;
+	}
+
+	.notprime {
+		height: 50px;
+		width: 50px;
+		border-radius: 12%;
+		border: solid 4px;
+		border-color: blue;
+		border-width: 4px;
+		background-color: #A3A3FF;
+		display: inline-block;
+		margin-top: 10px;
+      	margin-bottom: 10px;
+	}	
+	</style>
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script>
+var isPrime = true;
+var checkPrime = function(n) {
+	for(j=2;j<n;j++) {
+		if (n%j === 0) {
+			isPrime = false;
+		}
+	}
+}
+
+$(document).ready (function(){
+	for (i=1;i<=100;i++) {
+		checkPrime(i);
+		if (isPrime === true) {
+			$('#numbers').append('<div class="prime"><h2 align="center">'+i+'</h2></div>');
+			console.log(i);
+		}
+		else { 
+			$('#numbers').append('<div class="notprime"><h2 align="center">'+i+'</h2></div>');
+			isPrime = true;
+		}
+	}
+});
+	</script>
+</head>
+<body>
+<h1 align="center">Prime numbers</h1>
+<div id="numbers"></div>
+</body>
+</html>
+
+
+
