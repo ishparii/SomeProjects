@@ -1,2 +1,2 @@
-SomeProjects
+Prime Numbers
 ============
